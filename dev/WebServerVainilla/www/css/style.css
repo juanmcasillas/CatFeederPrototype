@@ -1,0 +1,568 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    font-family: 'Roboto', sans-serif;
+	/*font-family:arial, verdana, helvetica, sans-serif;*/
+	font-size:12px;
+	cursor:default;
+	background-color:#FFFFFF
+}
+* {
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+}
+html {
+	height:100%;
+	margin-bottom:1px;
+}
+#container {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	background-color: #FFFFFF;
+}
+#header {
+	width:100%;
+	padding-top:15px;
+
+}
+
+#header #bottombox {
+    width: 100%;
+}
+
+#header #caption {
+    display: inline-block;
+    width: 50%;
+}
+
+#header #search {
+    display: inline-block;
+    width: 49%;
+    text-align: right;
+}
+
+
+.spacer {
+	width:100%;
+	height:15px;
+}
+
+ol, ul {
+    margin-left: 50px;
+}
+
+li {
+    margin-top: 10px;
+}
+
+p {
+    margin: 5px;
+}
+
+hr {
+	border:0px;
+	color:#CCCCCC;
+	background-color:#CDCDCD;
+	height: 1px;
+	width: 100%;
+	text-align: left;
+}
+h1 {
+	font-size:28px;
+	color:#cc0000;
+	background-color:#FFFFFF;
+	font-family: 'Roboto', sans-serif;
+	font-weight:300;
+}
+h2 {
+	font-size:20px;
+	color:red;
+	font-family: 'Roboto', sans-serif;
+	font-weight:bold;
+	background-color:#FFFFFF;
+}
+h3 {
+	color:#cc0000;
+	font-size:15px;
+	text-align:left;
+	font-weight:300;
+	padding:5px;
+	margin-top:5px;
+}
+h4 {
+    color:#cc0000;
+    font-size:14px;
+    text-align:left;
+    font-weight:800;
+    padding:2px;
+    margin-top:7px;
+    margin-left:5px;
+}
+
+
+#left {
+	float:left;
+	width:140px;
+	background-color:#FFFFFF;
+	color:black;
+}
+
+#main {
+	margin					: 5px 5px 5px 140px;
+	padding					: 15px;
+	border-left				: 1px solid silver;
+}
+p {
+	color:black;
+	background-color:#FFFFFF;
+	line-height:20px;
+	padding:5px;
+}
+a {
+	color:#cc0000;
+	background-color:#FFFFFF;
+	text-decoration:none;
+}
+a:hover {
+	color:#cc0000;
+	background-color:#FFFFFF;
+	text-decoration:underline;
+}
+#footer {
+	clear:both;
+	font-size:12px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+.right {
+	color:gray;
+	background-color:#FFFFFF;
+	float:right;
+	font-size:100%;
+	margin-top:5px;
+}
+.left {
+	color:gray;
+	background-color:#FFFFFF;
+	float:left;
+	font-size:100%;
+	margin-top:5px;
+}
+
+
+#mcontainer {
+    margin: 0px;
+    padding: 0px;
+    vertical-align: center;
+}
+
+/* / MAPS Styles */
+
+#map {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#elevation_chart {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 80px;
+}
+
+
+#contentc {
+    width: 100%;
+    display: inline-block;
+
+}
+
+#contentc #leftc {
+    display: inline-block;
+    width: 35%;
+    vertical-align: top;
+    float: left;
+    
+}
+
+#contentc #rightc {
+    border-left: 1px silver dotted;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: top;
+    float:right;
+    width: 60%;
+}
+
+#right_right {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+
+}
+
+#right_left {
+    display: inline-block;
+    vertical-align: top;
+ }
+
+
+table.datac {
+    width: auto;
+
+}
+
+td.datach1 {
+    font-weight: bold;
+    width: 20%;
+    padding: 2px;
+    vertical-align: top;
+}
+
+td.datach2 {
+    text-align: left;
+    font-weight: 300;
+    padding: 2px;
+    width: 30%;
+    padding-left: 30px;
+}
+
+td.datach2d {
+    text-align: left;
+
+}
+
+/* search results elements */
+
+div.trackentries {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+div.trackentry {
+    margin-top: 15px;
+    width: 100%;
+}
+
+div.trackentry div.info {
+    vertical-align: top;
+    width: 70%;
+    display: inline-block;
+}
+
+div.trackentry div.graphics {
+    margin-left: 5px;
+    width: 200px;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+}
+
+/* places list */
+
+div.placeentries {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+div.placeentry {
+    margin-top: 15px;
+    width: 100%;
+}
+
+div.placeentry div.info {
+    vertical-align: top;
+    width: 70%;
+    display: inline-block;
+}
+
+
+
+
+
+/* pagination */
+div.pagination {
+}
+
+div.paginationitem {
+    padding: 5px;
+    border: 1px red dotted;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+   
+}
+div.paginationitemselected {
+    padding: 5px;
+    border: 1px red dotted;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+    font-size:14px;
+}
+
+div.paginationitemslen {
+    padding-top: 2px;
+    font-size: 10px;
+}
+
+/* stats styles */
+
+table.statt {
+    padding: 5px;
+}
+
+td.head {
+    padding-right: 20px;
+}
+
+td.value {
+    font-weight: bold;
+    text-align: left;
+    
+}
+
+
+/* google charts */
+
+#gstatscontainer {
+    width: 100%;
+    display: inline-block;
+    border: 1px red dotted;
+    text-align: center;
+    vertical-align: top;
+}
+
+#gstatscontainer div.gstatsitem {
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    height: 250px;
+}
+
+#gstatscontainerelevation {
+    width: 100%;
+    display: inline-block;
+    border: 1px red dotted;
+    text-align: center;
+    vertical-align: top;
+}
+
+#gstatscontainerelevation div.gstatsitem {
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    height: 250px;
+}
+
+#gstatscontainerdistance {
+    width: 100%;
+    display: inline-block;
+    border: 1px red dotted;
+    text-align: center;
+    vertical-align: top;
+}
+
+
+#gstatscontainerdistance div.gstatsitem {
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    height: 250px;
+}
+
+#gstatscontaineryear {
+    width: 100%;
+    display: inline-block;
+    border: 1px red dotted;
+    text-align: center;
+    vertical-align: top;
+}
+
+
+#gstatscontaineryear div.gstatsitem {
+    display: inline-block;
+    vertical-align: top;
+    width: 99%;
+    height: 450px;
+}
+
+
+/* places in the track view */
+
+
+div.topplaces {
+}
+
+div.topplaces div.placescontainer {
+    display: inline-block;
+}
+div.topplaces div.placesformcontainer {
+    display: inline-block;
+}
+
+
+div.placesc {
+    margin-left: 5px;
+    padding: 2px;
+}
+
+div.placescontainer div.placec {
+    padding: 5px;
+    border: 1px gray dotted;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+}
+
+div.placescontainer div.placec img {
+    width: 10px;
+}
+
+span.placespan {
+    border: 1px grey dotted;
+    padding: 1px;
+    margin: 1px;
+}
+
+/* search query box */
+
+input.query {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+/* slope and so on */
+
+img.slope {
+    height: 14px;
+  
+    
+}
+
+table.slope {
+    width: 99%;
+    border: 1px red dotted;
+    margin: 2px;
+    margin-bottom: 15px;
+}
+
+table.slope td {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+
+}
+
+table.slope tr {
+    margin: 2px;
+    padding: 0px;
+}
+
+/* trackstats */
+
+div.trackstatscontainer {
+    width: 100%;
+    vertical-align: top;
+    text-align: left;
+}
+
+
+div.trackstatscontainer div.gtrackstats_item {
+    vertical-align: middle;
+    width: 180px;
+    height: 180px;
+    display: inline-block;
+}
+
+
+div.trackstatscontainer div.gtrackstats_item_right {
+    vertical-align: top;
+    width: 300px;
+    height: 180px;
+
+    
+}
+
+span.trackstats {
+    display: none;
+}
+
+div.trackstats_score {
+    font-size:28px;
+    color:#cc0000;
+    background-color:#FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    display: inline-block;
+    vertical-align: center;
+    text-align: center;
+    height: 100%;
+    padding: 10px;    
+    border: 1px red dotted;
+}
+
+div.trackstatscontainer p {
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+/* img for delete all places in tracks */
+
+img.deleteallplaces {
+    width: 15px;
+    vertical-align: middle;
+    
+}
+
+#heatmap span {
+    padding: 4px;
+    color: white;
+}
+
+table.trackanalysis  {
+    width: auto;
+    margin: 0px;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+table.trackanalysis tr td  {
+   border: 1px black solid;
+   padding-left: 2px;
+   padding-right: 2px;
+}
+
+tr.trackanalysis_head {
+   background-color: #FAFAFA;
+}
+
+
+td.trackanalysis_orig {
+   background-color: #80CF80;
+}
+
+td.trackanalysis_calc {
+   background-color: #60AF60;
+}
+
+td.trackanalysis_delta {
+   background-color: #8080CF;
+}
+
+tr.trackanalysis_bad td {
+   background-color: #C04040;
+}
+
+tr.trackanalysis_redundant td {
+   background-color: #505050;
+}

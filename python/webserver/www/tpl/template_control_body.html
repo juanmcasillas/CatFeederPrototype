@@ -1,0 +1,118 @@
+<H1 id="maintitle">__GENERIC_TITLE__</H1><br/>
+
+<div id="maincontent">
+
+<H3>Control from here CatFeeder's operation mode (uptime: __GENERIC_UPTIME__)</h3>
+ 
+<br/>
+
+
+<br/>
+<br/>
+  
+ <h2>Catfeeder Mode</h2> 
+ <div id="hwstate" class="hwcontrol">
+ <table border="0">
+     <tr>
+     <td>CatFeeder Mode:</td>
+     <td>
+        <input id="hwstate_auto"   type="radio" name="state" value="auto" checked onClick="handleChangeCmd(this);"/>&nbsp;AUTO<br/><br/>
+        <input id="hwstate_manual" type="radio" name="state" value="manual" onClick="handleChangeCmd(this);"/>&nbsp;MANUAL
+     </td>
+     </tr>
+ </table>
+ </div>
+ 
+ <h2>Catfeeder status</h2>
+ <div class="hwcontrol"> 
+ <form id="hwvars">
+  <table border="0">
+     <tr>
+     <td>Lights</td>
+     <td>
+        <input id="light_low" type="radio" name="light" value="low"  onClick="handleChangeCmd(this);"/>&nbsp;OFF<br/><br/>
+        <input id="light_high" type="radio" name="light" value="high" onClick="handleChangeCmd(this);"/>&nbsp;ON
+     </td>
+
+     <td>Door</td>
+     <td>
+        <input  id="door_closed" type="radio" name="door" value="close"  onClick="handleChangeCmd(this);"/>&nbsp;Open Feeder (Close Door)<br/><br/>
+        <input  id="door_open" type="radio" name="door" value="open" onClick="handleChangeCmd(this);"/>&nbsp;Close Feeder (Open Door)
+     </td>
+     
+     <td>LED</td>
+     <td>
+        <input  id="led_low" type="radio" name="led" value="low"  onClick="handleChangeCmd(this);"/>&nbsp;OFF<br/><br/>
+        <input  id="led_high" type="radio" name="led" value="high" onClick="handleChangeCmd(this);"/>&nbsp;ON
+     </td>
+     
+     <td>Sensor Open</td>
+     <td>
+        <input disabled id="sensor_open_low" type="radio" name="sensor_open" value="low"  />&nbsp;OFF<br/><br/>
+        <input disabled id="sensor_open_high" type="radio" name="sensor_open" value="high" />&nbsp;ON
+     </td>
+     
+     <td>Sensor Closed</td>
+     <td>
+        <input disabled id="sensor_closed_low" type="radio" name="sensor_closed" value="low"  />&nbsp;OFF<br/><br/>
+        <input disabled id="sensor_closed_high" type="radio" name="sensor_closed" value="high" />&nbsp;ON
+     </td>
+     
+     <td>Detector</td>
+     <td>
+        <input disabled id="detector_low" type="radio" name="detector" value="low"  />&nbsp;Nothing Detected<br/><br/>
+        <input disabled id="detector_high" type="radio" name="detector" value="high" />&nbsp;Movement Detected
+     </td>
+
+     <td>Activation</td>
+     <td>
+        <input disabled id="activation_low" type="radio" name="activation" value="low"  />&nbsp;Non Activated<br/><br/>
+        <input disabled id="activation_high" type="radio" name="activation" value="high" />&nbsp;Activated
+     </td>
+
+     
+    </table>
+  </form>
+  
+  <!-- testing presence sensor -->
+  <br/>
+  <!-- <input type="button" id="presence_button" value="Toogle Presence" onClick="SendPresence();" /> -->
+  <input type="button" id="photo_button" name="photo" value="Take Photo" onClick="handleChangeCmd(this);" />
+  <input type="button" id="shutdown_button" name="shutdown" value="Shutdown" onClick="handleChangeCmd(this);" />
+  </div>
+
+  <img id="last_image" src="__GENERIC_LAST_IMAGE__" />
+
+<script>
+LoadControlStatus();
+
+ // used for send presence at low level (devel)
+ // var wsock = new WSock('ws://localhost:8089/');
+ // var wsock = new WSock('ws://192.168.0.163:8089/');
+ 
+$(document).ready(function() {
+    // set periodic interval request
+    var interval = setInterval(LoadControlStatus, 5*1000); // each 10 seconds
+   
+});
+        
+
+</script>
+
+<!--
+<pre id="output"></pre>
+<script>
+    var output = document.getElementById('output');
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://192.168.0.163:8088/control/log');
+    xhr.send();
+
+    setInterval(function() {
+        output.textContent = xhr.responseText;
+    }, 1000);
+</script>
+-->
+
+
+</div>

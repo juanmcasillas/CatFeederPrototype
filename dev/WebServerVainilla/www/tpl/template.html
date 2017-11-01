@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<!-- working dinamic altitude profile with the map -->
+<!-- see view-source:http://www.geocodezip.com/v3_elevation-profile_distance.html -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="/js/jslib.js"></script>
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+  <link href="/css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+  
+  <!-- header inserted data begins -->
+  __HEAD__
+  <!-- header inserted data ends -->
+
+  <script>
+   
+  </script>
+
+</head>
+
+
+<!-- HTML BODY ------------------------------------------------------------ -->
+<body>
+
+
+  <div id="container">
+    <div id="header">
+      <h1>CatFeeder</h1>
+
+      <div id="bottombox">
+      <div id="caption">
+      <h2>Control & Monitor your Pet's feed</h2>
+      </div>
+      <div id="search">
+      <form id="searchform" action="/search/json" method="GET">
+      <input type="text" name="query" size="60" class="query" id="query"/> <input type="submit" value="Search" />
+      </form>
+      </div>
+      </div>
+      <br />
+      <hr />
+    </div><!-- end header -->
+
+    <div id="left">
+
+      <h3>Actions</h3>
+      <p><a href="/recent_activity?cloned=no">Recent Activity</a><br/>
+      <p><a href="/recent_activity?cloned=yes">Recent Activity (all)</a><br/>
+      <p><a href="/favorites">Favorites</a><br/>
+      <p><a href="/all">All Tracks</a><br/>
+      <p><a href="/place/list">All Places</a><br/>
+      <p><a href="/stats">Stats</a><br/>
+      <p><a href="/howto">How to...</a><br/>
+      
+    </div><!-- end left division -->
+
+    <div id="main">
+            <!-- this element has to contain MAINCONTENT DIV to support Searchs -->
+            __BODY__
+    </div>
+
+    <div id="footer">
+      <hr />
+
+      <p class="left">| <a href=
+      "mailto:juanm.casillas@gmail.com">email</a> | <a href=
+      "http://www.jmcresearch.com">www</a>
+      |</p>
+
+      <p class="right">Some rights reserved <a href=
+      "mailto:juanm.casillas@gmail.com">Juan M. Casillas</a> 2017</p>
+
+      <p>&nbsp;</p>
+    </div><!-- end footer -->
+  </div><!-- end container -->
+  
+ 
+
+
+ 
+
+</body>
+</html>

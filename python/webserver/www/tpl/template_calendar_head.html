@@ -1,0 +1,60 @@
+<title id="title">__GENERIC_PAGE_TITLE__</title>
+
+<meta charset='utf-8' />
+<link href='css/fullcalendar.min.css' rel='stylesheet' />
+<link href='css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<script src='js/moment.min.js'></script>
+<script src='js/fullcalendar.min.js'></script>
+
+<script>
+    $(document).ready(function() {
+        
+        $('#calendar').fullCalendar({
+            
+            firstDay: 1,
+            
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay,listWeek,listDay'
+            },
+            
+            views: {
+                listDay: { buttonText: 'list day' },
+                listWeek: { buttonText: 'list week' }
+            },
+           
+            aspectRatio: 1.25,
+            navLinks: true, // can click day/week names to navigate views
+            editable: false,
+            //eventLimit: false, // allow "more" link when too many events
+            eventLimit: true,
+            
+            timezone:'local',
+            tooltip: true,
+            draggable: false,
+            //firstHour: 9,
+            //minTime: '9:00',
+            //maxTime: '19:00',
+            allDaySlot: false,
+            timeFormat: 'HH:mm',
+            axisFormat: 'HH:mm',
+            slotLabelFormat: 'HH:mm',
+
+            events: '/events/json',
+            
+            // to add funky images
+            eventRender: function(event, eventElement) {
+                if (event.imageurl) {
+                    eventElement.find("div.fc-content").prepend("<img src='" + event.imageurl +"' width='32' height='32'>");
+                }
+            },
+            
+        // any other sources...
+
+
+            
+        });
+        
+    });
+</script>

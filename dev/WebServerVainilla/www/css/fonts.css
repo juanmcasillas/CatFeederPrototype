@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "WebMyriad-Cond";
+  src: url(fonts/MyriadPro-Cond.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "WebMyriad-Regular";
+  src: url(fonts/MyriadPro-Regular.otf) format("opentype");
+}

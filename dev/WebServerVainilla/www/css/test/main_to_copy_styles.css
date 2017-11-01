@@ -1,0 +1,170 @@
+@import url(fonts.css) all;
+
+body {
+  background-color: #f2ca91;
+  font-family: "WebMyriad-Cond";
+  font-weight: 200;
+  font-size: 20px;
+  margin: 0 0 0 0;
+  
+}
+
+div.pagehead {
+    width: 100%;
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    
+    
+}
+span.pagetitle {
+   font-weight: 400;
+   font-size: 100px;
+   color: white;
+   text-shadow: 2px 2px #000000;
+}
+
+table, tr, td {
+   font-size: 24px;
+   color: white;
+   padding: 5px;
+   
+   }    
+
+a:link    { color: #fce2d5; text-decoration: underline; }     
+a:visited { color: #fce2d5; text-decoration: underline; }  
+a:hover   { color: #fce2d5; text-decoration: none;  }  
+a:active  { color: #fce2d5; text-decoration: underline; } 
+
+a.titlelink:link    { color: #ffffff; text-decoration: none; }     
+a.titlelink:visited { color: #ffffff; text-decoration: none; }  
+a.titlelink:hover   { color: #ffffff; text-decoration: none;  }  
+a.titlelink:active  { color: #ffffff; text-decoration: none; } 
+
+a.pagemenulink:link    { padding: 0.5em; font-size: 20px; color: #fce2d5; text-decoration: underline; }     
+a.pagemenulink:visited { padding: 0.5em; font-size: 20px; color: #fce2d5; text-decoration: underline; }  
+a.pagemenulink:hover   { padding: 0.5em; font-size: 20px; color: #fce2d5; text-decoration: none;  }  
+a.pagemenulink:active  { padding: 0.5em; font-size: 20px; color: #fce2d5; text-decoration: underline; } 
+
+
+div.docbody {
+ margin: 20px;
+ padding: 10px;
+ color: white;
+ font-size: 30px;  
+ width: 100% auto;
+
+}
+
+
+
+div.footer {
+   //position: fixed;
+   bottom:0;
+   width: 100%; 
+   text-align: center;
+   background-color:rgba(0, 0, 0, 0.5);
+   font-size: 20px;
+   color: white;
+   text-shadow: 2px 2px #000000;
+   padding: 10px;
+   
+   
+}
+
+div.mainpage {
+ background-color:rgba(0, 0, 0, 0.7);
+ margin-left: 80px;
+ margin-right: 80px;
+ margin-bottom: 80px;
+ padding-bottom: 20px;
+ text-align: center;
+
+}
+
+div.standardpage {
+ background-color:rgba(0, 0, 0, 0.7);
+ margin-left: 100px;
+ margin-right: 100px;
+ margin-bottom: 80px;
+ padding: 50px;
+ text-align: left;
+
+}
+
+div.photopage {
+ background-color:rgba(0, 0, 0, 0.7);
+ margin-left: 100px;
+ margin-right: 100px;
+ margin-bottom: 80px;
+ padding: 50px;
+ text-align: left;
+ clear: both;
+
+}
+
+img.photoitem {
+    height: 200px;
+    vertical-align: top;
+}
+
+img.photoitempano {
+    width: 600px;
+    vertical-align: top;
+}
+
+div.photoitem {
+    opacity: 0.5;
+    margin: 20px;
+}
+
+div.itemblock {
+    float: left;
+}
+
+div.mainitem { 
+    float: both;
+    margin: 10px;
+    padding: 10px;
+    opacity: 0.5;
+    
+}
+    
+a.footerlink:link    { color: #fce2d5; text-decoration: underline; }     
+a.footerlink:visited { color: #fce2d5; text-decoration: underline; }  
+a.footerlink:hover   { color: #fce2d5; text-decoration: none;  }  
+a.footerlink:active  { color: #fce2d5; text-decoration: underline; } 
+
+img.facebook {
+    height: 32px;
+    vertical-align:middle;
+}
+
+img.twitter {
+    height: 32px;
+    vertical-align:middle;
+}
+
+div.pseudotable {
+    margin-left: 20px;
+    margin-top: 0px;
+    
+}
+
+div.maintext {
+    text-align: left;
+    margin-right: 20px;
+}
+
+div.titlemain {
+    text-align: left;
+     font-size: 50px;
+     padding-left: 110px;
+     padding-top: 30px;
+     font-weight: bold;  
+}
+
+div.light_rounded, div.dark_rounded, div.facebook, 
+div.light_square, div.dark_square, div.pp_overlay { position: fixed; top: 10px; }
+     
+     

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="js/geoxml3.js"></script>
+
+  </head>
+  <body>
+    <div id="map"></div>
+
+
+
+<script type="text/javascript">
+
+var map;
+var geo;
+var layers = {};
+
+
+
+function CenterControl(controlDiv, map) {
+
+  // Set CSS for the control border.
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = '#fff';
+  controlUI.style.border = '2px solid #fff';
+  controlUI.style.borderRadius = '3px';
+  controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.marginRight = '5px';
+  controlUI.style.marginTop = '5px';
+  controlUI.style.marginBottom = '22px';
+  controlUI.style.textAlign = 'center';
+
+  controlUI.title = 'Click para mostrar/ocultar puertas';
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior.
+  var controlText = document.createElement('div');
+  controlText.style.color = 'rgb(25,25,25)';
+  controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+  controlText.style.fontSize = '14px';
+  controlText.style.lineHeight = '18px';
+  controlText.style.padding = '5px';
+  controlText.style.margin = '0px';
+  controlText.innerHTML = 'Mostrar/Ocultar Puertas';
+  controlUI.appendChild(controlText);
+
+}
+
+
+function initMap() {
+  var latlng = new google.maps.LatLng(40.386248, -4.2517562);
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: latlng,
+    mapTypeId: google.maps.MapTypeId.HYBRID,
+    streetViewControl: false,
+    zoom: 15
+  });
+
+  // custom control (show/hide layer)
+  var centerControlDiv = document.createElement('div');
+  var centerControl = new CenterControl(centerControlDiv, map);
+
+  centerControlDiv.index = 1;
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
+  centerControlDiv.addEventListener('click', toggle_base_layer );
+
+  var kmlOptions = {
+    suppressInfoWindows: true,
+    preserveViewport: false,
+    map: map
+  };
+
+  //var ctaLayer = new google.maps.KmlLayer(kmlUrl, kmlOptions);
+  //var kmlUrl = 'http://localhost:8088/track2kml?id=__TRACK_ID__';
+  //var kmlUrlPuertas = 'http://localhost:8088/wpt2kml?id=wptdb';
+  var kmlUrl = 'http://127.0.0.1:8088/demo.kml';
+  var kmlUrlPuertas = 'http://127.0.0.1:8088/puertas.kml';
+
+  var myParser = new geoXML3.parser({map: map});
+
+  geo = new geoXML3.parser({
+        map: map,
+        processStyles: true,
+        singleInfoWindow: true,
+        zoom: true,
+        //afterParse: toggle_base_layer
+        });
+
+  //geo.parse([kmlUrlPuertas, kmlUrl]);
+  geo.parse(kmlUrl);
+
+  layers['track'] = { id: 0, on: true, loaded: true };
+  layers['puertas'] = { id: 1, on: false, loaded: false };
+
+
+  // by default, hide "puertas" layer.
+  //google.maps.event.addListener(map, 'tilesloaded', function() { geo.hideDocument(geo.docs[0]); });
+}
+
+function toggle_base_layer() {
+
+    var l = layers['puertas'];
+
+    if (!l.loaded) {
+        geo.parse('http://localhost:8088/wpt2kml?id=wptdb');
+        layers['puertas'].loaded = true;
+        layers['puertas'].on = true;
+        return;
+    }
+
+    if (l.on) {
+     geo.hideDocument(geo.docs[l.id]);
+     layers['puertas'].on = false;
+    } else {
+     geo.showDocument(geo.docs[l.id]);
+     layers['puertas'].on = true;
+    }
+
+}
+
+
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmt3hDLA1J2QF9K9vB_1ksDT82fuS7LHk&callback=initMap">
+</script>
+
+<img src="http://localhost:8088/elevation?id=__TRACK_ID__" />
+
+
+<div id="data">
+
+<H2>__TRACK_FNAME__</H2>
+    <table id="data">
+    <tr><td>Sport</td><td>__TRACK_KIND__</td></tr>
+    <tr><td>GPS Device</td><td>__TRACK_DEVICE__</td></tr>
+    <tr><td>Equipment</td><td>__TRACK_EQUIPMENT__</td></tr>
+    <tr><td>Distance</td><td>__TRACK_DISTANCE__</td></tr>
+    <tr><td>Elevation</td><td>__TRACK_ELEVATION__</td></tr>
+    <tr><td>KIND</td><td>__TRACK_KIND__</td></tr>
+    </table>
+</div>
+
+</body>
+</html>
