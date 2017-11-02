@@ -1,0 +1,81 @@
+CatFeeder.
+
+How to write a Cat Feeder, with lot of componentes.
+
+pip install python-dateutil
+pip install nanpy
+sudo pip install git+https://github.com/dpallot/simple-websocket-server.git
+pip install pytz
+pip install tzlocal
+  
+------------------
+1) CAT RECOGNIZER
+------------------
+
+IDS
+
+01  ELI
+02  FIRULAIS
+03  NEKO
+
+
+GOAL: recognize what of the three cats are lurking arround.
+
+Using opencv2 (3.1.0) on raspberry Pi 3 with camera module 2.0 (raspbian jessie)
+
+We have to train the classifier with the cats. So we need a source of
+images. We can create a video, or add a bunch of images. So the flow:
+
+
+[VIDEO] -> Convert to Images -> Train -> [Match]
+
+[Match] can be realtime (VIDEO) or by picture (OFFLINE).
+
+
+process_video.py
+----------------
+
+Get a video, extract cat faces, dump in the filesystem.
+
+train_video.py
+--------------
+
+do the same thing, but trains a whole video. This is useful for one cat,
+but we need to train 3 different videos (three cats) so work on that.
+
+
+train_images.py
+test_images.py
+
+
+Nanpy:
+
+git clone https://github.com/nanpy/nanpy-firmware.git
+cd nanpy-firmware
+./configure.sh
+
+Managing a DC motor with Arduino
+(Extracted from a CD ROM)
+
+How to move it:
+
+ARDUINO_PWM_IN	ARDUINO_DIRA_IN ARDUINO_DIRB_IN		GIRO
+	5v				5v				0v				left
+	5v				0v				5v				right
+	5v				0v				0v				stop
+	5v				5v				5v				NOT_ALLOWED
+	0v				x				x				stop
+
+
+
+
+
+https://ardubasic.wordpress.com/2014/05/23/control-de-motores-de-cc-con-l293d/
+http://communityofrobots.com/tutorial/kawal/how-drive-dc-motor-using-l293d-arduino
+
+OPENCV_PYTHON (windows)
+
+set PATH=C:\Python27\DLLs;%PATH%
+
+
+

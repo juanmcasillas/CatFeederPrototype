@@ -1,3 +1,0 @@
-./start.sh: line 5:  6818 Terminated              python catfeeder_server.py catfeeder.db --serial_port=$SERIAL --host=$HOST > /tmp/catfeeder.log 2>&1
-./start.sh: line 5: 26527 Terminated              python catfeeder_server.py catfeeder.db --serial_port=$SERIAL --host=$HOST > /tmp/catfeeder.log 2>&1
-./start.sh: line 5: 15639 Terminated              python catfeeder_server.py catfeeder.db --serial_port=$SERIAL --host=$HOST > /tmp/catfeeder.log 2>&1
