@@ -14,7 +14,7 @@ import detector
 from db.rules import RuleService
 import db
 import hardware
-
+import ipnetutils
 
 class CatFeederServer:
     def __init__(self):
@@ -34,7 +34,7 @@ class CatFeederServer:
     def Define_Arguments(self):
         parser = argparse.ArgumentParser()
         parser.add_argument("-d", "--debug", help="Show debug info", action="store", default=logging.INFO)
-        parser.add_argument("-o", "--host", help="Host running the server", action="store", default="localhost")
+        parser.add_argument("-o", "--host", help="Host running the server", action="store", default=ipnetutils.get_default_ip())
         parser.add_argument("-p", "--port", help="Port running the server", action="store", default=8088)
         parser.add_argument("-D", "--dummy", help="Run in dummy mode (no hardware attached)", action="store_true", default=False)
         #parser.add_argument("-wp", "--wsock_port", help="Port running the server (WSOCK)", action="store", default=8089)
@@ -42,6 +42,7 @@ class CatFeederServer:
         
         parser.add_argument("database", help="DatabaseFile")
         args = parser.parse_args()
+        
         return args
 
     def Do_Checks(self,args):
